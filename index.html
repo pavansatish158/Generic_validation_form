@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Genric_Form">
+  <meta name="author" content="PAVAN SATISH KUTHA">
+  <title>JavaScript Form</title>
+  <!--style sheets -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="main" >
+  <h1><a href="http://www.developers-blog.com" title="" tabindex="-1"></a></h1>
+  	<form action="" class="Genric_Form" name="Genric_Form" method="GET" >
+      <label for="fname" >First name</label><span id="fnerror" class="error" ></span>
+      <div class="inp-row">
+        <input type="text" class="inp" id="fname"  placeholder="First name" class="form-control"/>
+      </div>
+      <label for="lname" >Last name</label><span id="lnerror" class="error" ></span>
+      <div class="inp-row">
+        <input type="text" class="inp" id="lname"  placeholder="Last name" class="form-control"/>
+      </div>
+      
+      <label for="email" >Email</label><span id="emailerror" class="error"></span>
+      <div class="inp-row">
+        <input type="text" class="inp" id="emailid"  placeholder="abc@mail.com" class="form-control">
+  		</div>
+      <label for="pwd" >Password</label>
+      <div class="inp-row"><span id="pwderror" class="error"></span>
+        <input type="password" class="inp" id="password"  placeholder="Abc123@" class="form-control">
+      </div>
+      
+      <label for="gender" >Gender</label><span id="gendererror" class="error" class="form-control"></span>
+      <div class="inp-row">
+        <div class="rad">
+          <input type="radio" class="rad" id="maleid" value="Male"   name="gender"  class="form-control" >Male
+          <input type="radio" class="rad" id="femaleid" value="Female" name="gender">Female
+  			</div>
+  		</div>
+      <label for="department" >Department</label><span id="depterror" class="error"></span>
+      <div class="inp-row">
+        <select id="deptid"  name="department" class="form-control" >
+  				<option value="0">--choose designation--</option>
+          <option value="1" >HR</option>
+  				<option value="2" >Developer</option>
+          <option value="3" >Designer</option>
+          <option value="4" >Telecaller</option>
+        </select>
+     	</div>
+      <label for="experience">Experience</label><span id="experror" class="error" class="form-control"></span>
+      <div class="inp-row">
+        <div class="checkbox-group">
+          <input type="checkbox" class="rad" id="traineeid" value="Trainee"   name="exp"  class="form-control" >Trainee
+          <input type="checkbox" class="rad"  id="juniorid" value="Junior" name="exp">Junior
+          <input type="checkbox" class="rad" id="seniorid" value="Senior" name="exp">Senior
+        </div>
+      </div>
+             <!-- security questions -->
+      <label for="secret_question0" >Intrests & Hobbies</label><span id="questionerror" class="error" class="form-control"></span>
+      <div class="inp-row">
+            <!-- Secret Question Example Field --> 
+        <select name="secret_question" id="questionid"  multiple><!-- <span id="questionerror" class="error" class="form-control"></span> -->
+          <option value=""  disabled>--choose from here--</option>     
+          <option value="0">Sports</option> 
+          <option value="1">Reading books</option> 
+          <option value="2">Travelling</option>
+          <option value="3">Listening music</option>
+          <option value="4">Dancing</option>
+          <option value="5">Painting</option>
+          <option value="6">Other</option>
+        </select>
+      </div>
+
+              <!-- Secret question answer fields -->
+      <!-- <div class="inp-row">
+        <input type="text" name="secret.question0.answer" id="answerid1" value="" placeholder="1.answer" size="12" maxlength="20" tabindex="9" >
+        <input type="text" name="secret.question0.answer" id="answerid2" value="" placeholder="2.answer" size="12" maxlength="20" tabindex="9" ><span id="answererror" class="error" class="form-control">
+      </div> -->
+              <!-- text area -->
+      <label for="about" >About you</label><span id="txterror" class="error" class="form-control"></span>
+      <div class="inp-row">
+        <textarea cols="35" id="textareaid"rows="3" wrap="hard">
+        </textarea>
+      </div>
+              <!-- Date-time picker -->
+      <label for="date-time" >Date-Time</label>
+      <div class="inp-row"><span id="dateerror" class="error"   class="form-control"></span>
+        <input id="date" type="date" name="date" value="">
+        <input id="time" type="time" name="time" value=""><span id="timeerror" class="error"   class="form-control"></span>
+      </div>
+      	<div class="inp-row">
+          <label for="agree" class="agree"><input type="checkbox" name="checkbox" id="checkboxid"  class="form-control">I accept the Terms of Service. </label><span id="checkboxerror" class="error"></span><br/>
+      	</div>
+        <input type="submit" name="submit" class="sub-btn"   value="SignUp" onclick="return validateAll()" >Already signed up?
+        <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" /value="Login" style="background-color: #4169e1; margin-left: 2px;">
+    </form>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+</html>
+      
+
+
+
+    
+
+
+

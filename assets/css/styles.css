@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+  }
+  body{
+    background-color: #291933;
+  }
+  .main{
+    width: 600px;
+    background-color: #decaf7/*#eee*/;
+    margin: 13px auto;
+    border-radius: 1px;
+    box-shadow: 0 0 10px #000;
+
+  }
+
+  .main h1 a{
+     background-image: url(http://www.developers-blog.com/wp-content/uploads/2014/12/logo.png);
+    background-size: auto;
+    width: auto;
+    margin: 0;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 80px;
+    line-height: 1.3em;
+    padding: 0;
+    outline: 0;
+    display: block; 
+  }
+   .form-box{
+    padding: 10px 25px 20px 25px;
+   }
+
+   .checkbox-group {
+   
+    display: inline-flex;
+    font-size: 14px;
+  }
+   .inp{
+    font-size: 12px;
+    width: 50%;
+    padding:10px 10px 10px 10px;
+    border:none;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    /*box-shadow: 0 0 2px 1px #444; */
+    display: block;
+   }
+   .inp:focus{
+    outline: none;
+    box-shadow: 0 0 5px 1px #4169e1;
+    color: #262526;
+    font-weight: bold;
+   }
+   label{
+    font-size: 15px;
+    color: rgb(88, 88, 88);
+    font-weight: bold;
+    margin-left: 10px;
+    float: left;
+    text-align: right;
+    clear: both;
+
+
+   }
+   .agree{
+    margin-left: 1px;
+  
+
+   }
+   .inp-row{
+    margin: 5px 0 10px 150px;
+   }
+   .sub-btn{
+    width: 20%;
+    padding: 10px;
+    font-size: 18px;
+    background: #449d44;
+    cursor: pointer;
+    color: #fff;
+    border: none; 
+    border-color: #398439; 
+    margin-left: 150px; 
+    margin-bottom: 5px;
+
+   }
+   .sub-btn:hover{
+    color: #333;
+    text-decoration: none;
+   }
+
+   .sub-btn:focus{
+    outline: none;
+   }
+
+
+
+
+
+   @media(max-width: 720px){
+    .main{
+      width: 90%;
+    }
+   }
+
+.rad {
+  font-size: 14px;
+  margin: 0 3px 0 10px;
+  display: inline-flex;
+}
+
+textarea {
+  resize: none;
+  font-size: 12px;
+}
+
+/*.login {
+  text-align: center;
+
+
+}
+
+.login  a {
+  text-decoration:none;
+
+}*/
+
+#secret_question_answer {
+  display: inline-block; 
+  border: none;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+.error{
+  font-size: 13px; 
+  float: right; 
+  margin-right: 10px;
+}
