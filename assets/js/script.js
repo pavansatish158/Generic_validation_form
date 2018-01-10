@@ -1,3 +1,5 @@
+  
+
   function validateAll()
   {
     var validfields = true;
@@ -42,6 +44,8 @@
     return false; 
   }
 
+                // validation of name,email and password
+
   function validatefields()
     {
       var name = document.getElementById('fname').value;
@@ -53,7 +57,7 @@
       var passwordreg = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
               
               
-              // validation of name,email and password
+              
       
       if(name == "")
       {
@@ -161,14 +165,14 @@
       }
       
   }
-     // validation of radio
+     // validation of radio--gender
     
    function radio()
    {
           var genM = document.getElementById("mgen");
           var genF = document.getElementById("fgen");
        
-        // return true;
+        
           if(genM.checked == false && genF.checked == false)
        
         {
@@ -183,7 +187,7 @@
     }
          var gen = document.querySelector('input[name=gender]:checked').value
 
-      // validation of  combo
+      // validation of  combo--department
 
    function validatecombo()
    {
@@ -204,7 +208,7 @@
       }
       
     }
-          // validation of checkboxgroup
+          // validation of checkboxgroup--experience
 
     function checkboxgroup()
     {
@@ -228,24 +232,35 @@
     }
         var expr = document.querySelector('input[name=exp]').value  
         
-           // validation of multicombo
+           // validation of multicombo--hobbies& interests
 
     function multicombos()
     {
-      var questions = document.getElementById('questionid').value;
-      if(questions == "" && questions<2)
+      var questions = document.forms.Genric_Form;
+      var optionsVal = "";
+      var x =0;
+      for ( x=0; x< questions.options.length; x++) {
+      if(questions.options[x].selected){
+        optionsVal = optionsVal+ ","+ questions.options[x].value;
+      }
+      }    
+       
+      if(optionsVal == "")
       {
         document.getElementById('questionerror').innerHTML = "*Please choose interests & hobbies";
         document.getElementById('questionerror').style.color = "red ";
-        document.getElementById('questionid').focus();
+        document.getElementById('options').focus();
         return false;
       }
+      
       else
       {
+
         document.getElementById('questionerror').style.display = "none";
         return true;
       }
     }
+    
           // validation of textarea
 
     function textarea()
@@ -304,7 +319,28 @@
             // validation of checkbox
     function checkbx()     
     {
+            // declaring all variables 
+      var name = document.getElementById('fname').value;
+      var lname = document.getElementById('lname').value;
+      var password = document.getElementById('password').value;
+      var email = document.getElementById('emailid').value;
+      var gen = document.querySelector('input[name=gender]:checked').value
+      var dept = document.getElementById('deptid');
+      var strDept= dept.options[dept.selectedIndex].value;
+      var expr = document.querySelector('input[name=exp]').value  
+      var questions = document.forms.Genric_Form;
+      var optionsVal = "";
+      var x =0;
+      for ( x=0; x< questions.options.length; x++) {
+      if(questions.options[x].selected){
+        optionsVal = optionsVal+ ","+ questions.options[x].value;
+      }
+      }
+      var txtarea = document.getElementById('textareaid').value;
+      var date = document.getElementById('date').value;
+      var time=document.getElementById('time').value;
       var checkbox = document.getElementById('checkboxid');
+      
       if(checkbox.checked == false)
       {
         document.getElementById('checkboxerror').innerHTML = "*Please click to agree";
@@ -316,18 +352,18 @@
       {
         document.getElementById('checkboxerror').style.display = "none";
 
-        alert("First name :" + fname.value +
-          "\nLast name : "+ lname.value +
-          "\nemail :" + emailid.value +
-         "\npassword :" + password.value +
+        alert("First name :" + name +
+          "\nLast name : "+ lname +
+          "\nemail :" + email +
+         "\npassword :" + password +
           "\nGender :" + gen +
-         "\nDesignation :" + deptid.value +
+         "\nDesignation :" + strDept +
          "\nExperience :" + expr +
-         "\nHobbies :" + questionid.value +
-         "\nAbout you:" + textareaid.value +
-         "\ndate:" + date.value+
-         "\nTime:" + time.value+
-         "\nAgreed to policy :" + checkboxid.checked);
+         "\nHobbies :" + optionsVal +
+         "\nAbout you:" + txtarea +
+         "\ndate:" + date+
+         "\nTime:" + time+
+         "\nAgreed to policy :" + checkbox.checked);
          return true;
 
     }

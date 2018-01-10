@@ -13,8 +13,8 @@
   </head>
   <body>
     <div class="main" >
-      <!-- Banner -->
     <h1><a href="http://www.developers-blog.com" title="" tabindex="-1"></a></h1>
+                      <!-- form starting -->
     	<form action="" class="Genric_Form" name="Genric_Form" method="GET" >
         
         <label for="fname" >First name</label><span id="fnerror" class="error" ></span>
@@ -63,10 +63,10 @@
                <!-- Intrests & Hobbies -->
         <label for="secret_question0" >Intrests & Hobbies</label><span id="questionerror" class="error" class="form-control"></span>
         <div class="inp-row">
-          <select name="secret_question" id="questionid"  multiple>
-            <option value=""  disabled>--choose from here--</option>     
-            <option value="Sports">Sports</option> 
-            <option value="Reading books">Reading books</option> 
+          <select  id="options"  name="myselect" multiple>
+     <!--        <option value=""  disabled>--choose from here--</option> -->     
+            <option value="Sports" >Sports</option> 
+            <option value="Reading books" >Reading books</option> 
             <option value="Travelling">Travelling</option>
             <option value="Listening music">Listening music</option>
             <option value="Dancing">Dancing</option>
@@ -91,7 +91,9 @@
         	</div>
           <input type="submit" name="submit" class="sub-btn"   value="SignUp" onclick="return validateAll()" >Already signed up?
           <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" /value="Login" style="background-color: #4169e1; margin-left: 2px;">
-      </form>
+      </form>    
+      <!-- form ending -->
+      <!-- external javascript file -->
       <script type="text/javascript" src="./assets/js/script.js"></script>
   </body>
   </html>
