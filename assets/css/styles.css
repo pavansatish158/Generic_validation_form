@@ -39,6 +39,7 @@
    
     display: inline-flex;
     font-size: 14px;
+    
   }
    .inp{
     font-size: 12px;
@@ -59,7 +60,7 @@
     font-size: 15px;
     color: rgb(88, 88, 88);
     font-weight: bold;
-    margin-left: 10px;
+    margin-left: 50px;
     float: left;
     text-align: right;
     clear: both;

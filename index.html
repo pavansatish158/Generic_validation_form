@@ -19,23 +19,23 @@
         
         <label for="fname" >First name</label><span id="fnerror" class="error" ></span>
         <div class="inp-row">
-          <input type="text" class="inp" id="fname"  placeholder="First name" class="form-control"/>
+          <input type="text" class="inp" id="fname"  placeholder="First name" onblur="removeerror()" class="form-control"/>
         </div>
         <label for="lname" >Last name</label><span id="lnerror" class="error" ></span>
         <div class="inp-row">
-          <input type="text" class="inp" id="lname"  placeholder="Last name" class="form-control"/>
+          <input type="text" class="inp" id="lname"  placeholder="Last name" onblur="removeerror()" class="form-control"/>
         </div>
         
         <label for="email" >Email</label><span id="emailerror" class="error"></span>
         <div class="inp-row">
-          <input type="text" class="inp" id="emailid"  placeholder="abc@mail.com" class="form-control">
+          <input type="text" class="inp" id="emailid"  placeholder="abc@mail.com" onblur="removeerror()" class="form-control">
     		</div>
         <label for="pwd" >Password</label>
         <div class="inp-row"><span id="pwderror" class="error"></span>
-          <input type="password" class="inp" id="password"  placeholder="Abc123@" class="form-control">
+          <input type="password" class="inp" id="password"  placeholder="Abc123@" onblur="removeerror()" class="form-control">
         </div>
         
-        <label for="gender" >Gender</label><span id="gendererror" class="error" class="form-control"></span>
+        <label for="gender" >Gender</label><span id="gendererror" class="error" onblur="removeerror()" class="form-control"></span>
         <div class="inp-row">
           <div class="rad" id="check">
             <input type="radio" class="rad" id="mgen" value="Male"   name="gender"  checked=""   >Male
@@ -44,7 +44,7 @@
     		</div>
         <label for="department" >Department</label><span id="depterror" class="error"></span>
         <div class="inp-row">
-          <select id="deptid"  name="department" class="form-control" >
+          <select id="deptid"  name="department"  onblur="removeerror()" class="form-control" >
     				<option value="0">--choose designation--</option>
             <option value="HR" >HR</option>
     				<option value="Developer" >Developer</option>
@@ -52,19 +52,19 @@
             <option value="Telecaller" >Telecaller</option>
           </select>
        	</div>
-        <label for="experience">Experience</label><span id="experror" class="error" class="form-control"></span>
+        <label for="experience">Experience</label><span id="experror"  class="error" class="form-control"></span>
         <div class="inp-row">
-          <div class="checkbox-group">
-            <input type="checkbox" class="rads" id="traineeid" value="Trainee"   name="exp"  class="form-control" >Trainee
+          <div class="checkbox-group"  >
+            <input type="checkbox" class="rads" id="traineeid" value="Trainee" onblur="removeerror()"  name="exp"  class="form-control" >Trainee
             <input type="checkbox" class="rads"  id="juniorid" value="Junior" name="exp">Junior
             <input type="checkbox" class="rads" id="seniorid" value="Senior" name="exp">Senior
           </div>
         </div>
                <!-- Intrests & Hobbies -->
-        <label for="secret_question0" >Intrests & Hobbies</label><span id="questionerror" class="error" class="form-control"></span>
+        <label for="secret_question0" >Hobbies</label><span id="questionerror"  class="error" class="form-control"></span>
         <div class="inp-row">
-          <select  id="options"  name="myselect" multiple>
-     <!--        <option value=""  disabled>--choose from here--</option> -->     
+          <select  id="options" onblur="removeerror()" name="myselect" multiple>
+            <option value=""  disabled>--choose from here--</option>     
             <option value="Sports" >Sports</option> 
             <option value="Reading books" >Reading books</option> 
             <option value="Travelling">Travelling</option>
@@ -75,19 +75,20 @@
           </select>
         </div>
                 <!-- text area -->
-        <label for="about" >About you</label><span id="txterror" class="error" class="form-control"></span>
+        <label for="about" >About you</label><span id="txterror" class="error"  class="form-control"></span>
         <div class="inp-row">
-          <textarea cols="35" id="textareaid"rows="3" wrap="hard">
+          <textarea cols="35" id="textareaid"rows="3" wrap="hard" onblur="removeerror()">
           </textarea>
         </div>
                 <!-- Date-time picker -->
         <label for="date-time" >Date-Time</label>
-        <div class="inp-row"><span id="dateerror" class="error"   class="form-control"></span>
-          <input id="date" type="date" name="date" value="">
-          <input id="time" type="time" name="time" value="12:30"><span id="timeerror" class="error"   class="form-control"></span>
+        <div class="inp-row"><span id="dateerror" class="error"    class="form-control"></span>
+          <input id="date" type="date" name="date" value="" onblur="removeerror()"><span id="timeerror" class="error"   class="form-control"></span>
+          <input id="time" type="time" name="time" value="01:00" onblur="removeerror()">
         </div>
         	<div class="inp-row">
-            <label for="agree" class="agree"><input type="checkbox" name="checkbox" id="checkboxid"  class="form-control">I accept the Terms of Service. </label><span id="checkboxerror" class="error"></span><br/>
+            <label for="agree" class="agree"></label><span id="checkboxerror" class="error"></span>
+            <input type="checkbox" name="checkbox" id="checkboxid" onblur="removeerror()" class="form-control">I accept the Terms of Service.<br/>
         	</div>
           <input type="submit" name="submit" class="sub-btn"   value="SignUp" onclick="return validateAll()" >Already signed up?
           <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" /value="Login" style="background-color: #4169e1; margin-left: 2px;">

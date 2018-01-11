@@ -1,4 +1,4 @@
-  
+
 
   function validateAll()
   {
@@ -196,7 +196,7 @@
 
       if(strDept == "0")
       {
-        document.getElementById('depterror').innerHTML = "*Please select designation";
+        document.getElementById('depterror').innerHTML = "*Please select your designation";
         document.getElementById('depterror').style.color = "red ";
         document.getElementById('deptid').focus();
         return false;
@@ -241,7 +241,7 @@
       var x =0;
       for ( x=0; x< questions.options.length; x++) {
       if(questions.options[x].selected){
-        optionsVal = optionsVal+ ","+ questions.options[x].value;
+        optionsVal = optionsVal+ questions.options[x].value+ " ";
       }
       }    
        
@@ -288,7 +288,7 @@
       var time=document.getElementById('time').value;
         if(date =="")
           {
-              document.getElementById('dateerror').innerHTML = "*Enter valid date";
+              document.getElementById('dateerror').innerHTML = "*Please enter valid date";
               document.getElementById('date').focus();
               document.getElementById('dateerror').style.color = "red";
               return false;
@@ -302,7 +302,7 @@
           }
         if(time =="")
           {
-              document.getElementById('timeerror').innerHTML = "*Enter valid time";
+              document.getElementById('timeerror').innerHTML = "*Please enter valid time";
               document.getElementById('time').focus();
               document.getElementById('timeerror').style.color = "red ";
               return false;
@@ -333,7 +333,7 @@
       var x =0;
       for ( x=0; x< questions.options.length; x++) {
       if(questions.options[x].selected){
-        optionsVal = optionsVal+ ","+ questions.options[x].value;
+        optionsVal = optionsVal+ questions.options[x].value+"  ";
       }
       }
       var txtarea = document.getElementById('textareaid').value;
@@ -343,7 +343,7 @@
       
       if(checkbox.checked == false)
       {
-        document.getElementById('checkboxerror').innerHTML = "*Please click to agree";
+        document.getElementById('checkboxerror').innerHTML = "*Click to agree to Terms";
         document.getElementById('checkboxerror').style.color = "red ";
         document.getElementById('checkboxid').focus();
         return false;
@@ -368,4 +368,31 @@
 
     }
   }
+
+  function removeerror() 
+  {
+   
+    document.getElementById("fnerror").innerHTML = "";
+    document.getElementById("fname").style.backgroundColor = "#ffffff";
+    document.getElementById("lnerror").innerHTML = "";
+    document.getElementById("lname").style.backgroundColor = "#ffffff";
+    document.getElementById("emailerror").innerHTML = "";
+    document.getElementById("emailid").style.backgroundColor = "#ffffff";
+    document.getElementById("pwderror").innerHTML = "";
+    document.getElementById("password").style.backgroundColor = "#ffffff";
+    document.getElementById("gendererror").innerHTML = "";
+    document.getElementById("mgen").style.backgroundColor = "#ffffff";
+    document.getElementById("questionerror").innerHTML = "";
+    document.getElementById("depterror").innerHTML = "";
+    document.getElementById("experror").innerHTML = "";
+    document.getElementById("txterror").innerHTML = "";
+    document.getElementById("dateerror").innerHTML = "";
+    document.getElementById("timeerror").innerHTML = "";
+    document.getElementById("checkboxerror").innerHTML = "";
+   
+  }
+
+
+
+  
      
