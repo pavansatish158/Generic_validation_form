@@ -10,9 +10,9 @@
     background-color: #291933;
   }
   .main{
-    width: 600px;
+    width: 560px;
     background-color: #decaf7/*#eee*/;
-    margin: 13px auto;
+    margin: 10px auto;
     border-radius: 1px;
     box-shadow: 0 0 10px #000;
 
@@ -43,7 +43,7 @@
   }
    .inp{
     font-size: 12px;
-    width: 50%;
+    width: 60%;
     padding:10px 10px 10px 10px;
     border:none;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -73,7 +73,7 @@
 
    }
    .inp-row{
-    margin: 5px 0 10px 150px;
+    margin: 5px 0 15px 150px;
    }
    .sub-btn{
     width: 20%;
@@ -84,7 +84,7 @@
     color: #fff;
     border: none; 
     border-color: #398439; 
-    margin-left: 150px; 
+    margin-left: 100px; 
     margin-bottom: 5px;
 
    }
@@ -96,8 +96,6 @@
    .sub-btn:focus{
     outline: none;
    }
-
-
 
 
 
@@ -113,21 +111,16 @@
   display: inline-flex;
 }
 
+.rads {
+  font-size: 14px;
+  margin: 0 3px 0 10px;
+  display: inline-flex;
+}
 textarea {
   resize: none;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-/*.login {
-  text-align: center;
-
-
-}
-
-.login  a {
-  text-decoration:none;
-
-}*/
 
 #secret_question_answer {
   display: inline-block; 
@@ -135,8 +128,7 @@ textarea {
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
 
+
 .error{
   font-size: 13px; 
-  float: right; 
-  margin-right: 10px;
 }

@@ -17,81 +17,91 @@
                       <!-- form starting -->
     	<form action="" class="Genric_Form" name="Genric_Form" method="GET" >
         
-        <label for="fname" >First name</label><span id="fnerror" class="error" ></span>
+        <label for="fname" >First name</label>
         <div class="inp-row">
-          <input type="text" class="inp" id="fname"  placeholder="First name" onblur="removeerror()" class="form-control"/>
+          <input type="text" class="inp" id="fname"  placeholder="First name" onblur ="removeerror()" class="form-control"/>
+          <span id="fnerror" class="error" ></span>
         </div>
-        <label for="lname" >Last name</label><span id="lnerror" class="error" ></span>
+        <label for="lname" >Last name</label>
         <div class="inp-row">
           <input type="text" class="inp" id="lname"  placeholder="Last name" onblur="removeerror()" class="form-control"/>
+          <span id="lnerror" class="error" ></span>
         </div>
         
-        <label for="email" >Email</label><span id="emailerror" class="error"></span>
+        <label for="email" >Email</label>
         <div class="inp-row">
           <input type="text" class="inp" id="emailid"  placeholder="abc@mail.com" onblur="removeerror()" class="form-control">
-    		</div>
+          <span id="emailerror" class="error"></span>
+    	</div>
         <label for="pwd" >Password</label>
-        <div class="inp-row"><span id="pwderror" class="error"></span>
+        <div class="inp-row">
           <input type="password" class="inp" id="password"  placeholder="Abc123@" onblur="removeerror()" class="form-control">
+          <span id="pwderror" class="error"></span>
         </div>
         
-        <label for="gender" >Gender</label><span id="gendererror" class="error" onblur="removeerror()" class="form-control"></span>
+        <label for="gender" >Gender</label>
         <div class="inp-row">
-          <div class="rad" id="check">
+          <div class="rad" id="check" onblur="removeerror()" class="form-control">
             <input type="radio" class="rad" id="mgen" value="Male"   name="gender"  checked=""   >Male
             <input type="radio" class="rad" id="fgen" value="Female" name="gender" >Female
+            <span id="gendererror" class="error" ></span>
     			</div>
     		</div>
-        <label for="department" >Department</label><span id="depterror" class="error"></span>
+        <label for="department" >Department</label>
         <div class="inp-row">
           <select id="deptid"  name="department"  onblur="removeerror()" class="form-control" >
-    				<option value="0">--choose designation--</option>
+    		<option value="0">--choose designation--</option>
             <option value="HR" >HR</option>
-    				<option value="Developer" >Developer</option>
+    		<option value="Developer" >Developer</option>
             <option value="Designer" >Designer</option>
             <option value="Telecaller" >Telecaller</option>
-          </select>
+          </select><br><span id="depterror" class="error"></span>
        	</div>
-        <label for="experience">Experience</label><span id="experror"  class="error" class="form-control"></span>
+        <label for="experience">Experience</label>
         <div class="inp-row">
+        	<!-- onclick=" return disableHandler(document.forms.Genric_Form, 'exp');" -->
           <div class="checkbox-group"  >
-            <input type="checkbox" class="rads" id="traineeid" value="Trainee" onblur="removeerror()"  name="exp"  class="form-control" >Trainee
-            <input type="checkbox" class="rads"  id="juniorid" value="Junior" name="exp">Junior
-            <input type="checkbox" class="rads" id="seniorid" value="Senior" name="exp">Senior
-          </div>
+            <input type="checkbox" class="rads" id="traineeid" value="Trainee"   name="exp" onblur="removeerror()" onclick="removeremain()">Trainee
+            <input type="checkbox" class="rads"  id="juniorid" value="Junior" name="exp" onblur="removeerror()" onclick="removeremain1()">Junior
+            <input type="checkbox" class="rads" id="seniorid" value="Senior" name="exp" onblur="removeerror()" onclick="removeremain2()">Senior
+            
+          </div><br><span id="experror"  class="error" class="form-control"></span>
         </div>
                <!-- Intrests & Hobbies -->
-        <label for="secret_question0" >Hobbies</label><span id="questionerror"  class="error" class="form-control"></span>
+        <label for="secret_question0" >Hobbies</label>
         <div class="inp-row">
           <select  id="options" onblur="removeerror()" name="myselect" multiple>
             <option value=""  disabled>--choose from here--</option>     
             <option value="Sports" >Sports</option> 
-            <option value="Reading books" >Reading books</option> 
-            <option value="Travelling">Travelling</option>
-            <option value="Listening music">Listening music</option>
             <option value="Dancing">Dancing</option>
             <option value="Painting">Painting</option>
+            <option value="Travelling">Travelling</option>
+            <option value="Listening music">Listening music</option>
+            <option value="Reading books" >Reading books</option> 
             <option value="Other">Other</option>
-          </select>
+          </select><br><span id="questionerror"  class="error" class="form-control"></span>
         </div>
                 <!-- text area -->
-        <label for="about" >About you</label><span id="txterror" class="error"  class="form-control"></span>
+        <label for="about" >About you</label>
         <div class="inp-row">
           <textarea cols="35" id="textareaid"rows="3" wrap="hard" onblur="removeerror()">
-          </textarea>
+          </textarea><br><span id="txterror" class="error"  class="form-control"></span>
         </div>
                 <!-- Date-time picker -->
         <label for="date-time" >Date-Time</label>
-        <div class="inp-row"><span id="dateerror" class="error"    class="form-control"></span>
-          <input id="date" type="date" name="date" value="" onblur="removeerror()"><span id="timeerror" class="error"   class="form-control"></span>
-          <input id="time" type="time" name="time" value="01:00" onblur="removeerror()">
+        <div class="inp-row">
+          <input id="date" type="date" name="date" value="" onblur="removeerror()">
+          <input id="time" type="time" name="time" value="01:00" onblur="removeerror()"><br>
+          <span id="dateerror" class="error" class="form-control">
+          <span id="timeerror" class="error" class="form-control">
         </div>
         	<div class="inp-row">
-            <label for="agree" class="agree"></label><span id="checkboxerror" class="error"></span>
-            <input type="checkbox" name="checkbox" id="checkboxid" onblur="removeerror()" class="form-control">I accept the Terms of Service.<br/>
-        	</div>
+           	<label for="agree" class="agree"></label><input type="checkbox" name="checkbox" id="checkboxid" onblur="removeerror()" class="form-control">I accept the Terms of Service. <br><span id="chkerror" class="error"></span>
+        	</div> 
+        	
           <input type="submit" name="submit" class="sub-btn"   value="SignUp" onclick="return validateAll()" >Already signed up?
-          <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" /value="Login" style="background-color: #4169e1; margin-left: 2px;">
+          <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" value="Login" style="background-color: #4169e1; margin-left: 2px; padding-top: 10px">
+      
       </form>    
       <!-- form ending -->
       <!-- external javascript file -->

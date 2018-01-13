@@ -32,6 +32,7 @@
                 if(datetime)
                 {
                   checkbox=checkbx();
+                  
                   return checkbox;
                 }
               }
@@ -171,8 +172,6 @@
    {
           var genM = document.getElementById("mgen");
           var genF = document.getElementById("fgen");
-       
-        
           if(genM.checked == false && genF.checked == false)
        
         {
@@ -216,9 +215,11 @@
       var trainee = document.getElementById('traineeid');
       var junior = document.getElementById('juniorid');
       var senior = document.getElementById('seniorid');
-
-      if(trainee.checked == false && junior.checked == false && senior.checked == false)
-      {
+      var chkd
+      // var chkd=(document.Genric_Form.Trainee.checked  || document.Genric_Form.Junior.checked  || document.Genric_Form.Senior.checked )
+      var chkd=(trainee.checked  || junior.checked  || senior.checked )
+      // var chkd=(trainee.checked  && junior.checked  && senior.checked )
+      if(chkd==false){
         document.getElementById('experror').innerHTML = "*Please choose experience level";
         document.getElementById('experror').style.color = "red ";
         document.getElementById('traineeid').focus();
@@ -227,10 +228,10 @@
       else
       {
         document.getElementById('experror').style.display = "none";
+       
         return true;
       }
     }
-        var expr = document.querySelector('input[name=exp]').value  
         
            // validation of multicombo--hobbies& interests
 
@@ -298,7 +299,7 @@
           {
               document.getElementById('date').style.backgroundColor = "white";
               document.getElementById('dateerror').style.display = "none";
-       
+              return true;
           }
         if(time =="")
           {
@@ -316,6 +317,7 @@
 
     }
     
+    
             // validation of checkbox
     function checkbx()     
     {
@@ -327,13 +329,13 @@
       var gen = document.querySelector('input[name=gender]:checked').value
       var dept = document.getElementById('deptid');
       var strDept= dept.options[dept.selectedIndex].value;
-      var expr = document.querySelector('input[name=exp]').value  
+      var cheks = document.querySelector('input[name=exp]:checked').value;  
       var questions = document.forms.Genric_Form;
       var optionsVal = "";
       var x =0;
       for ( x=0; x< questions.options.length; x++) {
       if(questions.options[x].selected){
-        optionsVal = optionsVal+ questions.options[x].value+"  ";
+        optionsVal = optionsVal+ questions.options[x].value+ " ";
       }
       }
       var txtarea = document.getElementById('textareaid').value;
@@ -343,14 +345,16 @@
       
       if(checkbox.checked == false)
       {
-        document.getElementById('checkboxerror').innerHTML = "*Click to agree to Terms";
-        document.getElementById('checkboxerror').style.color = "red ";
+        document.getElementById('chkerror').innerHTML = "*Click to agree to Terms";
+        document.getElementById('chkerror').style.color = "red ";
         document.getElementById('checkboxid').focus();
         return false;
       }
       else
-      {
-        document.getElementById('checkboxerror').style.display = "none";
+      { 
+         document.getElementById('checkboxid').style.backgroundColor = "white";
+        document.getElementById('chkerror').style.display = "none";
+
 
         alert("First name :" + name +
           "\nLast name : "+ lname +
@@ -358,7 +362,7 @@
          "\npassword :" + password +
           "\nGender :" + gen +
          "\nDesignation :" + strDept +
-         "\nExperience :" + expr +
+         "\nExperience :" + cheks +
          "\nHobbies :" + optionsVal +
          "\nAbout you:" + txtarea +
          "\ndate:" + date+
@@ -388,10 +392,25 @@
     document.getElementById("txterror").innerHTML = "";
     document.getElementById("dateerror").innerHTML = "";
     document.getElementById("timeerror").innerHTML = "";
-    document.getElementById("checkboxerror").innerHTML = "";
+    document.getElementById("chkerror").innerHTML = "";
    
   }
 
+  function removeremain() {
+      document.getElementById("traineeid").checked = true;
+      document.getElementById("juniorid").checked = false;
+      document.getElementById("seniorid").checked = false;
+    }
+  function removeremain1() {
+      document.getElementById("traineeid").checked = false;
+      document.getElementById("juniorid").checked = true;
+      document.getElementById("seniorid").checked = false;
+    }
+  function removeremain2() {
+      document.getElementById("traineeid").checked = false;
+      document.getElementById("juniorid").checked = false;
+      document.getElementById("seniorid").checked = true;
+    }
 
 
   
