@@ -216,9 +216,7 @@
       var junior = document.getElementById('juniorid');
       var senior = document.getElementById('seniorid');
       var chkd
-      // var chkd=(document.Genric_Form.Trainee.checked  || document.Genric_Form.Junior.checked  || document.Genric_Form.Senior.checked )
       var chkd=(trainee.checked  || junior.checked  || senior.checked )
-      // var chkd=(trainee.checked  && junior.checked  && senior.checked )
       if(chkd==false){
         document.getElementById('experror').innerHTML = "*Please choose experience level";
         document.getElementById('experror').style.color = "red ";
@@ -238,14 +236,14 @@
     function multicombos()
     {
       var questions = document.forms.Genric_Form;
-      var optionsVal = "";
-      var x =0;
-      for ( x=0; x< questions.options.length; x++) {
-      if(questions.options[x].selected){
-        optionsVal = optionsVal+ questions.options[x].value+ " ";
-      }
-      }    
+      var sel = document.getElementById("options");
+      var valued = sel.selectedOptions;
+      var optionsVal= []
+      for (var i = valued.length - 1; i >= 0; i--) {
+        optionsVal.push(valued[i].value);
        
+    }
+        optionsVal= optionsVal.join(',')     
       if(optionsVal == "")
       {
         document.getElementById('questionerror').innerHTML = "*Please choose interests & hobbies";
@@ -253,10 +251,8 @@
         document.getElementById('options').focus();
         return false;
       }
-      
       else
       {
-
         document.getElementById('questionerror').style.display = "none";
         return true;
       }
@@ -267,9 +263,10 @@
     function textarea()
     {
       var txtarea = document.getElementById('textareaid').value;
-      if(txtarea < 15)
+
+      if(txtarea=='' || txtarea.length < 15)
       {
-        document.getElementById('txterror').innerHTML = "*Enter atleast 15 characters";
+        document.getElementById('txterror').innerHTML = "*Enter atleast 15 characters & maximum of 50 characters";
         document.getElementById('txterror').style.color = "red ";
         document.getElementById('textareaid').focus();
         return false;
@@ -329,15 +326,25 @@
       var gen = document.querySelector('input[name=gender]:checked').value
       var dept = document.getElementById('deptid');
       var strDept= dept.options[dept.selectedIndex].value;
-      var cheks = document.querySelector('input[name=exp]:checked').value;  
+      var checkboxes = document.getElementsByName('exp');
+      var vals = "";
+       for (var i=0, n=checkboxes.length;i<n;i++) 
+      {
+          if (checkboxes[i].checked) 
+          {
+              vals += ","+checkboxes[i].value;
+          }
+      }
+      if (vals) vals = vals.substring(1);  
       var questions = document.forms.Genric_Form;
-      var optionsVal = "";
-      var x =0;
-      for ( x=0; x< questions.options.length; x++) {
-      if(questions.options[x].selected){
-        optionsVal = optionsVal+ questions.options[x].value+ " ";
+      var sel = document.getElementById("options");
+      var valued = sel.selectedOptions;
+      var optionsVal= []
+      for (var i = valued.length - 1; i >= 0; i--) 
+      {
+      optionsVal.push(valued[i].value);        
       }
-      }
+      optionsVal= optionsVal.join(',') 
       var txtarea = document.getElementById('textareaid').value;
       var date = document.getElementById('date').value;
       var time=document.getElementById('time').value;
@@ -355,15 +362,15 @@
          document.getElementById('checkboxid').style.backgroundColor = "white";
         document.getElementById('chkerror').style.display = "none";
 
-
+            //showing all the input values in a alert box 
         alert("First name :" + name +
           "\nLast name : "+ lname +
           "\nemail :" + email +
          "\npassword :" + password +
           "\nGender :" + gen +
          "\nDesignation :" + strDept +
-         "\nExperience :" + cheks +
-         "\nHobbies :" + optionsVal +
+         "\nExperience :" + vals +
+         "\nHobbies :" + optionsVal +        
          "\nAbout you:" + txtarea +
          "\ndate:" + date+
          "\nTime:" + time+
@@ -372,7 +379,7 @@
 
     }
   }
-
+          // removing error on blur event
   function removeerror() 
   {
    
@@ -395,23 +402,9 @@
     document.getElementById("chkerror").innerHTML = "";
    
   }
-
-  function removeremain() {
-      document.getElementById("traineeid").checked = true;
-      document.getElementById("juniorid").checked = false;
-      document.getElementById("seniorid").checked = false;
-    }
-  function removeremain1() {
-      document.getElementById("traineeid").checked = false;
-      document.getElementById("juniorid").checked = true;
-      document.getElementById("seniorid").checked = false;
-    }
-  function removeremain2() {
-      document.getElementById("traineeid").checked = false;
-      document.getElementById("juniorid").checked = false;
-      document.getElementById("seniorid").checked = true;
-    }
-
-
-  
-     
+          // removal of leading and trailing white spaces in text area field
+  function removeTextAreaWhiteSpace() 
+  {
+    var myTxtArea = document.getElementById('textareaid');
+    myTxtArea.value = myTxtArea.value.replace(/^\s*|\s*$/g,'');
+  }

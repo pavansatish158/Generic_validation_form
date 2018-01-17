@@ -59,11 +59,11 @@
        	</div>
         <label for="experience">Experience</label>
         <div class="inp-row">
-        	<!-- onclick=" return disableHandler(document.forms.Genric_Form, 'exp');" -->
+        	
           <div class="checkbox-group"  >
-            <input type="checkbox" class="rads" id="traineeid" value="Trainee"   name="exp" onblur="removeerror()" onclick="removeremain()">Trainee
-            <input type="checkbox" class="rads"  id="juniorid" value="Junior" name="exp" onblur="removeerror()" onclick="removeremain1()">Junior
-            <input type="checkbox" class="rads" id="seniorid" value="Senior" name="exp" onblur="removeerror()" onclick="removeremain2()">Senior
+            <input type="checkbox" class="rads" id="traineeid" value="Trainee"   name="exp" onblur="removeerror()">Trainee
+            <input type="checkbox" class="rads"  id="juniorid" value="Junior" name="exp" onblur="removeerror()">Junior
+            <input type="checkbox" class="rads" id="seniorid" value="Senior" name="exp" onblur="removeerror()">Senior
             
           </div><br><span id="experror"  class="error" class="form-control"></span>
         </div>
@@ -84,7 +84,7 @@
                 <!-- text area -->
         <label for="about" >About you</label>
         <div class="inp-row">
-          <textarea cols="35" id="textareaid"rows="3" wrap="hard" onblur="removeerror()">
+          <textarea cols="35" id="textareaid"rows="3" wrap="hard" onblur="removeerror()" onload="removeTextAreaWhiteSpace()">
           </textarea><br><span id="txterror" class="error"  class="form-control"></span>
         </div>
                 <!-- Date-time picker -->
@@ -96,12 +96,14 @@
           <span id="timeerror" class="error" class="form-control">
         </div>
         	<div class="inp-row">
-           	<label for="agree" class="agree"></label><input type="checkbox" name="checkbox" id="checkboxid" onblur="removeerror()" class="form-control">I accept the Terms of Service. <br><span id="chkerror" class="error"></span>
+        		<div class="checkbox-group">
+           	<label for="agree" class="agree"></label><input type="checkbox" class="rads" name="checkbox" id="checkboxid" onblur="removeerror()" class="form-control" value="I accept the Terms of Service.">I accept the Terms of Service. 
+        		</div><br><span id="chkerror" class="error"></span>
         	</div> 
-        	
+        	<div class="inp-row">
           <input type="submit" name="submit" class="sub-btn"   value="SignUp" onclick="return validateAll()" >Already signed up?
-          <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" value="Login" style="background-color: #4169e1; margin-left: 2px; padding-top: 10px">
-      
+          <input type="button" name="" class="sub-btn" onclick="window.location.href='http://www.developers-blog.com/wp-login.php'" value="Login" style="background-color: #4169e1; margin-left: 2px;">
+      		</div>
       </form>    
       <!-- form ending -->
       <!-- external javascript file -->
